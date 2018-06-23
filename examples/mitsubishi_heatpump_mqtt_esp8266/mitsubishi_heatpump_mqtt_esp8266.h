@@ -1,6 +1,4 @@
 
-//#define OTA
-
 // wifi settings
 const char* ssid     = "<YOUR WIFI SSID GOES HERE>";
 const char* password = "<YOUR WIFI PASSWORD GOES HERE>";
@@ -21,6 +19,12 @@ const char* heatpump_timers_topic       = "heatpump/timers";
 
 const char* heatpump_debug_topic        = "heatpump/debug";
 const char* heatpump_debug_set_topic    = "heatpump/debug/set";
+
+//Arduino OTA Settings.  Uncommenting the below line will enable this.
+//#define OTA
+const char* ota_hostname                = client_id //Defaults to the Client ID entered above
+const char* ota_password                = "<OTA PASSWORD GOES HERE>"
+const char* ota_port                    = "8266" //This is the default port.  Only change if you know what you are doing.
 
 // pinouts
 const int redLedPin  = 0; // Onboard LED = digital pin 0 (red LED on adafruit ESP8266 huzzah)

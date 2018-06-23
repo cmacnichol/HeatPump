@@ -47,9 +47,18 @@ void setup() {
   hp.setSettingsChangedCallback(hpSettingsChanged);
   hp.setStatusChangedCallback(hpStatusChanged);
   hp.setPacketCallback(hpPacketDebug);
-
+   
   #ifdef OTA
-    ArduinoOTA.begin();
+  // Set OTA Port
+  ArduinoOTA.setPort(ota_port);
+  
+  // Set OTA HostName
+  ArduinoOTA.setHostname(ota_hostname);
+
+  // No authentication by default
+  ArduinoOTA.setPassword(ota_password);
+  
+  ArduinoOTA.begin();
   #endif
   
   hp.connect(&Serial);
