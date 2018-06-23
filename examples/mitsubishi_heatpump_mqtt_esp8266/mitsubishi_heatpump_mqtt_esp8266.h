@@ -22,6 +22,13 @@ const char* heatpump_timers_topic       = "heatpump/timers";
 const char* heatpump_debug_topic        = "heatpump/debug";
 const char* heatpump_debug_set_topic    = "heatpump/debug/set";
 
+//mqtt Last Will and Testament Settings
+const char* will_Topic                  = heatpump_topic + "/LWT";
+const int will_QoS                      = 0;
+const char* will_Message                = "Offline";
+const char* AnnouncementMsg             = "Online";
+boolean will_Retain true;
+
 // pinouts
 const int redLedPin  = 0; // Onboard LED = digital pin 0 (red LED on adafruit ESP8266 huzzah)
 const int blueLedPin = 2; // Onboard LED = digital pin 0 (blue LED on adafruit ESP8266 huzzah)

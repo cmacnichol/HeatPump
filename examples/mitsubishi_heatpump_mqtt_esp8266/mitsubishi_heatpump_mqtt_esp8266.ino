@@ -246,7 +246,9 @@ void mqttConnect() {
   // Loop until we're reconnected
   while (!mqtt_client.connected()) {
     // Attempt to connect
-    if (mqtt_client.connect(client_id, mqtt_username, mqtt_password)) {
+    if (mqtt_client.connect(client_id, mqtt_username, mqtt_password, will_Topic, will_QoS, will_Retain, will_Message)) {
+	  //If Connected, Publish Announcement to Will Topic
+	  mqtt_client.publish(will_Topic,AnnouncementMsg,will_Retain);
       mqtt_client.subscribe(heatpump_set_topic);
       mqtt_client.subscribe(heatpump_debug_set_topic);
     } else {
