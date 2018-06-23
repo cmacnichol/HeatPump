@@ -20,11 +20,20 @@ const char* heatpump_timers_topic       = "heatpump/timers";
 const char* heatpump_debug_topic        = "heatpump/debug";
 const char* heatpump_debug_set_topic    = "heatpump/debug/set";
 
+<<<<<<< HEAD
 //Arduino OTA Settings.  Uncommenting the below line will enable this.
 //#define OTA
 const char* ota_hostname                = client_id; //Defaults to the Client ID entered above
 const char* ota_password                = "<OTA PASSWORD GOES HERE>";
 const int ota_port                      = 8266; //This is the default port.  Only change if you know what you are doing.
+=======
+//mqtt Last Will and Testament Settings
+const char* will_Topic                  = heatpump_topic + "/LWT";
+const int will_QoS                      = 0;
+const char* will_Message                = "Offline";
+const char* AnnouncementMsg             = "Online";
+boolean will_Retain true;
+>>>>>>> TemperatureTopicFix
 
 // pinouts
 const int redLedPin  = 0; // Onboard LED = digital pin 0 (red LED on adafruit ESP8266 huzzah)

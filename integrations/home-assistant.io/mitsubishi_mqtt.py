@@ -135,7 +135,7 @@ class MqttClimate(ClimateDevice):
 
     @property
     def current_temperature(self):
-        """Return the temperature we try to reach."""
+        """Return the current heat pump temperature."""
         return self._current_temperature
 
     @property
